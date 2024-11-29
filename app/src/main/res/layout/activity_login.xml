@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/biege"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:layout_width="139dp"
+        android:layout_height="139dp"
+        android:src="@drawable/logo_chambre"/>
+
+    <TextView
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:text="OptiVote"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+
+    <RelativeLayout
+        android:id="@+id/loginContainer"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="90dp" >
+        <ImageView
+            android:id="@+id/myIcon"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="-33dp"
+            android:elevation="10dp"
+            android:layout_toEndOf="@+id/loginEt"
+            android:src="@drawable/person_icon"
+            android:background="@drawable/loginiconitems"
+            android:scaleType="center"/>
+
+        <EditText
+            android:id="@+id/loginEt"
+            android:layout_width="290dp"
+            android:layout_height="60dp"
+            android:background="@drawable/loginedittextitems"
+            android:elevation="7dp"
+            android:hint="أسم المستخدم"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:padding="18dp"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/passwordContainer"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="90dp" >
+        <ImageView
+            android:id="@+id/myIcon2"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="-33dp"
+            android:elevation="10dp"
+            android:layout_toEndOf="@+id/passwordEt"
+            android:src="@drawable/lock"
+            android:background="@drawable/loginiconitems"
+            android:scaleType="center"/>
+
+        <EditText
+            android:id="@+id/passwordEt"
+            android:layout_width="290dp"
+            android:layout_height="60dp"
+            android:background="@drawable/loginedittextitems"
+            android:elevation="7dp"
+            android:hint="كلمة السر"
+            android:minHeight="48dp"
+            android:inputType="textPassword"
+            android:padding="18dp"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck"/>
+
+
+    </RelativeLayout>
+
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="تسجيل الدخول"
+        android:backgroundTint="@color/blue"/>
+
+    <Button
+        android:id="@+id/btnForgetPassword"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:text="@string/under"
+        android:textColor="@color/blue"
+        android:textSize="15sp" />
+
+</LinearLayout>

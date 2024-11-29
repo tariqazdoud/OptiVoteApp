@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HistoryDetails">
+
+    <FrameLayout
+        android:id="@+id/sheets"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:background="@drawable/info_shape"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                android:layout_marginTop="8dp"
+                android:layout_width="150dp"
+                android:layout_height="10dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="@color/greyTransparent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/OthersRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/personalChoiceHolder"
+                android:paddingTop="40dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/personalChoiceHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/transparent"
+                android:elevation="25dp"
+
+                android:translationZ="24dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+
+
+                    >
+
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/currentUserImg"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:visibility="gone"
+                        android:elevation="5dp"
+                        android:padding="10dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.884"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:shapeAppearanceOverlay="@style/roundedImageView"
+                        tools:src="@drawable/profile" />
+
+                    <TextView
+                        android:id="@+id/currentUserName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:visibility="gone"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/currentUserImg"
+                        app:layout_constraintHorizontal_bias="0.863"
+                        app:layout_constraintStart_toEndOf="@+id/currentUserDecision"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5"
+                        tools:text="السيد رشيد العلوي" />
+
+                    <TextView
+                        android:id="@+id/currentUserDecision"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="92dp"
+
+                        android:background="@drawable/button_shape"
+                        android:backgroundTint="@color/blue"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5"
+                        tools:text="موافق" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <include
+            layout="@layout/waveshape"
+            app:layout_constraintBottom_toTopOf="@+id/textViewsHolder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <LinearLayout
+            android:id="@+id/textViewsHolder"
+            android:layout_width="625dp"
+            android:layout_height="342dp"
+            android:layout_marginTop="168dp"
+            android:background="@drawable/loginedittextitems"
+            android:elevation="15dp"
+            android:orientation="vertical"
+            android:translationZ="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/voteTitle"
+                android:layout_width="625dp"
+                android:layout_height="wrap_content"
+                android:elevation="15dp"
+                android:textAlignment="center"
+                android:textDirection="rtl"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:translationZ="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="عنوان التصويت" />
+
+            <TextView
+                android:id="@+id/voteContent"
+                android:layout_width="625dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:elevation="15dp"
+                android:textAlignment="center"
+                android:textSize="40sp"
+                android:translationZ="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="محتوى الاستفتاء" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.637"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewsHolder"
+            app:layout_constraintVertical_bias="0.189">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp">
+
+                    <TextView
+                        android:id="@+id/AgreeCountTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="50sp"
+                        tools:text="2P" />
+
+                    <ProgressBar
+                        android:id="@+id/agreeProgressBar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="555dp"
+                        android:layout_height="35dp"
+                        android:layout_below="@id/AgreeCountTv"
+                        android:layoutDirection="rtl"
+                        android:progressDrawable="@drawable/custom_progress_bg"
+                        tools:progress="50" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="موافق"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp">
+
+                    <TextView
+                        android:id="@+id/DisagreeCountTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="50sp"
+                        tools:text="2P" />
+
+                    <ProgressBar
+                        android:id="@+id/DisagreeProgressBar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="553dp"
+                        android:layout_height="35dp"
+                        android:layout_below="@id/DisagreeCountTv"
+                        android:layoutDirection="rtl"
+                        android:progressDrawable="@drawable/custom_progress_bg"
+
+                        tools:progress="50" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="معارض"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp">
+
+                    <TextView
+                        android:id="@+id/NeutralCountTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="50sp"
+                        tools:text="2P" />
+
+                    <ProgressBar
+                        android:id="@+id/NeutralProgressBar"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="555dp"
+                        android:layout_height="35dp"
+                        android:layout_below="@id/NeutralCountTv"
+                        android:layoutDirection="rtl"
+                        android:progressDrawable="@drawable/custom_progress_bg"
+                        tools:progress="50" />
+
+
+                </RelativeLayout>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="محايد"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

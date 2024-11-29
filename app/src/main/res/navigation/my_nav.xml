@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.optivote.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+
+        <action
+            android:id="@+id/action_homePageFragment_to_voteFragment"
+            app:destination="@id/voteFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.optivote.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historyFragment_to_historyDetails"
+            app:destination="@id/historyDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalAccountFragment"
+        android:name="com.example.optivote.PersonalAccountFragment"
+        android:label="fragment_personal_account"
+        tools:layout="@layout/fragment_personal_account" />
+    <fragment
+        android:id="@+id/voteFragment"
+        android:name="com.example.optivote.VoteFragment"
+        android:label="fragment_vote"
+        tools:layout="@layout/fragment_vote" >
+
+        <argument
+            android:name="voteData"
+            app:argType="com.example.optivote.model.VoteDto" />
+        <action
+            android:id="@+id/action_voteFragment_to_votesHistoryFragment"
+            app:destination="@id/votesHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyDetails"
+        android:name="com.example.optivote.HistoryDetails"
+        android:label="fragment_history_details"
+        tools:layout="@layout/fragment_history_details" >
+        <argument
+            android:name="VoteDto"
+            app:argType="com.example.optivote.model.VoteDto" />
+    </fragment>
+    <fragment
+        android:id="@+id/upcomingSessionFragment"
+        android:name="com.example.optivote.UpcomingSessionFragment"
+        android:label="fragment_upcoming_session"
+        tools:layout="@layout/fragment_upcoming_session" >
+        <action
+            android:id="@+id/action_upcomingSessionFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/votesHistoryFragment"
+        android:name="com.example.optivote.VotesHistoryFragment"
+        android:label="fragment_votes_history"
+        tools:layout="@layout/fragment_votes_history" >
+        <action
+            android:id="@+id/action_votesHistoryFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
+</navigation>

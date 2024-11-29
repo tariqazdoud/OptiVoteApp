@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="roundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="CustomAlertDialog" parent="Theme.MaterialComponents.Dialog.Alert">
+        <!-- Customizing button color -->
+        <item name="colorAccent">#214372</item>
+        <!-- Background color for the dialog -->
+        <item name="android:background">@drawable/dialog_background</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <!-- Message text color -->
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">28sp</item>
+
+    </style>
+    <style name="CustomBottomNavigationTextAppearance" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">25sp</item>
+    </style>
+
+</resources>

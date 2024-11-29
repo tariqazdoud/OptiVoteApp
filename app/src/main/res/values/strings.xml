@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OptiVote</string>
+    <string name="enter_new_task">Enter New Task</string>
+    <string name="under"><u>نسيت كلمة السر؟</u></string>
+    <string name="seemore"><u>شاهد المزيد</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
